@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import random
 
 app = Flask(__name__)
@@ -29,8 +29,9 @@ def kickstart():
         'rowllf'
     ]
 
-    return '%s_%s' % (random.choice(adjective), random.choice(name))
+    random_hostname = '%s-%s' % (random.choice(adjective), random.choice(name))
+    return render_template('kickstart.ks', random_hostname=random_hostname)
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
