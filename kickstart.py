@@ -3,7 +3,7 @@ import random
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/kickstart.ks')
 def kickstart():
 
     adjective = [
@@ -34,4 +34,4 @@ def kickstart():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
